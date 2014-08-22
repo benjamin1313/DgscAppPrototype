@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkyFighter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="themes/DGSC.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile.structure-1.4.3.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <a href="index.html" data-role="button" data-icon="home">Home</a>
+            <h1>SkyFighter</h1>
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <div id="node-id"></div>
+            <script><!--koden som heter infoen om serverens status-->
+                var ip = "skyfighter.dgsc.dk";<!--ipen på den server som man skal havde status på//-->
+                var node = document.getElementById('node-id');
+                var newNode = document.createElement('p');
+                var newNode2 = document.createElement('p');
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "http://minecraft-api.com/v1/get/" + ip, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        data = JSON.parse(xhr.responseText);
+                        if (data.status) {
+                            newNode.appendChild(document.createTextNode("serveren er Online"));
+                            node.appendChild(newNode);
+                            
+                            newNode2.appendChild(document.createTextNode("og der er " + data.players.online + "/" + data.players.max + " spillere online!"));
+                            node.appendChild(newNode2);
+
+                        } else {
+                            newNode.appendChild(document.createTextNode("serveren er Offline :["));
+                            node.appendChild(newNode);
+                        }
+                    }
+                }
+                xhr.send();
+            </script>
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-position="fixed">
+            <h5>made by Benjamin1313</h5>
+        </div><!-- /footer -->
+        
+    </div><!-- /page -->
+</body>
+</html>

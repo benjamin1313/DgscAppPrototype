@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" /><!--Link til style.css-->
+    <link rel="stylesheet" href="themes/DGSC.min.css" /> <!--Link til temaet-->
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile.structure-1.4.3.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+</head>
+<body>
+    <div data-role="page"><!--Denne Div danner hele siden-->
+        <div data-role="header" data-position="fixed" ><!--Header. dette er title baren i toppen-->
+            <h1>Home</h1>
+        </div><!-- /header slut-->
+        
+        <div data-role="content"><!--Content. sidens inhold f.eks tekst og knapper-->
+            <ul data-role="listview" data-inset="true"><!--Listview. denne liste indeholder listen med serveren-->
+                <li><a href="Kofs.html">Kofs</a></li><!--link til kofs.html viser siden med serverens status-->
+                <li><a href="Prison.html">Prison</a></li><!--link til prison.html viser siden med serverens status-->
+                <li><a href="SkyFighter.html">SkyFighter</a></li><!--link til SkyFighter.html viser siden med serverens status-->
+            </ul>
+            <ul data-role="listview" data-inset="true"><!--liste med forum og facebook felter-->
+                <li><a href="http://dgsc.dk/">Forum</a></li><!--link som åbner DGSC forum i et nyt vindue-->
+                <li><a href="https://www.facebook.com/DGSC.dk?ref=stream&fref=nf">Facebook</a></li><!--link som åbner DGSC facebook i et nyt vindue-->
+            </ul>
+        </div><!-- /content slut -->
+        
+        <div data-role="footer" data-position="fixed"><!--footer. dette er baren i bunden -->
+            <h5>made by Benjamin1313</h5>
+        </div><!-- /footer -->
+        
+    </div><!-- /page -->
+</body>
+</html>
